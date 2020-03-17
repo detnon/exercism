@@ -24,6 +24,7 @@ class KindergartenGardenTest(unittest.TestCase):
             garden.plants("Bob"), ["Clover", "Grass", "Radishes", "Clover"]
         )
 
+
     def test_partial_garden_second_student_s_garden(self):
         garden = Garden("VVCCGG\nVVCCGG")
         self.assertEqual(garden.plants("Bob"), ["Clover", "Clover", "Clover", "Clover"])
