@@ -1,0 +1,10 @@
+19   Swiper: 
+               ["tenth", "ten Lords-a-Leaping, "],
+               ["eleventh", "eleven Pipers Piping, "],
+               ["twelfth", "twelve Drummers Drumming, "]]
+ 
+     output =  f"On the {verses[start_verse - 1][0]} day of Christmas" \
+         " my true love gave to me:"
+ 
+     return output + f"{verses[:-1][end_verse - 1]}"
+ print(recite(1,1))
