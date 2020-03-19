@@ -5,17 +5,29 @@ class Garden:
         groups = []
         f = 0
         s = 2
-        for r in range(int(len(rows[0]) / 2)):
+        for r in rows:
             groups.append(''.join(rows[0][f:s]+rows[1][f:s]))
             f += 2
             s += 2
         return(groups)
 
 
+    def wrap_groups(self, diagam):
+        rows = diagram.split('\n')
+        wrap(rows,2)
+
     def plants(self):
-        plants = ['Radishes','Grass','Clover','Violets']
+        return {
+            'R':'Radishes',
+            'G':'Grass',
+            'C':'Clover',
+            'V':'Violets'}
+
+
+
+
         for g in get_groups(diagram):
-            if
+            pass
         if get_groups(diagram):
             plantcronym = ''.join([p[0] for p in plants ])
 
