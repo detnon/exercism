@@ -9,34 +9,33 @@ class Garden:
             groups.append(''.join(rows[0][f:s]+rows[1][f:s]))
             f += 2
             s += 2
-        return(groups)
+        return groups
 
 
-    def wrap_groups(self, diagam):
-        rows = diagram.split('\n')
-        wrap(rows,2)
 
-    def plants(self):
-        return {
+    def plants(self, student):
+        list = {
             'R':'Radishes',
             'G':'Grass',
             'C':'Clover',
             'V':'Violets'}
 
+        group_index = self.students.index(student)
+        print(group_index)
+        student_group = self.get_groups(self.diagram)[group_index]
+        print(student_group)
+        students_plants = []
 
+        for i in student_group:
+            print(i)
+            for k, v in list.items():
+                if i == k:
+                    students_plants.append(v)
 
-
-        for g in get_groups(diagram):
-            pass
-        if get_groups(diagram):
-            plantcronym = ''.join([p[0] for p in plants ])
-
-        # Figure out index of student in list
-        # Use this to get the correct plantcronym
-        # Reverse the acronym to get the full names of the plants
-        # Return it.
-
+        print(students_plants)
+        return students_plants
 
 
     def __init__(self, diagram, students):
-        pass
+        self.students = sorted(students)
+        self.diagram = diagram
