@@ -1,4 +1,15 @@
+from pprint import pprint
+
 class Garden:
+
+    student_list = ['Alice','Bob','Charlie','David',
+                    'Eve','Fred','Ginny','Harriet',
+                    'Llena','Joseph','Kincaid','Larry']
+    plant_list = {
+            'R':'Radishes',
+            'G':'Grass',
+            'C':'Clover',
+            'V':'Violets'}
 
     def get_groups(self, diagram):
         rows = diagram.split('\n')
@@ -13,27 +24,16 @@ class Garden:
 
 
     def plants(self, student):
-        list = {
-            'R':'Radishes',
-            'G':'Grass',
-            'C':'Clover',
-            'V':'Violets'}
+        student_plant_map = dict(zip( self.students, self.get_groups(self.diagram)))
+        pprint(student)
+        pprint(student_plant_map)
+        pprint(student_plant_map.get(student))
 
-        print( self.get_groups(self.diagram))
-        group_index = self.students.index(student)
-        print( group_index)
-        student_group = self.get_groups(self.diagram)[group_index]
-        students_plants = []
-
-        for i in student_group:
-            for k, v in list.items():
-                if i == k:
-                    students_plants.append(v)
-        return students_plants
+        return [v for i in student_plant_map.get(student)
+                  for k,v in self.plant_list.items()
+                  if i == k ]
 
 
-    def __init__(self, diagram, students=['Alice','Bob','Charlie','David',
-                                          'Eve','Fred','Ginny','Harriet',
-                                          'Llena','Joseph','Kincaid','Larry']):
+    def __init__(self, diagram, students=student_list):
         self.students = sorted(students)
         self.diagram = diagram
