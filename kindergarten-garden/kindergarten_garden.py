@@ -2,14 +2,16 @@ from pprint import pprint
 
 class Garden:
 
-    student_list = ['Alice','Bob','Charlie','David',
-                    'Eve','Fred','Ginny','Harriet',
-                    'Llena','Joseph','Kincaid','Larry']
+    student_list = [
+        'Alice','Bob','Charlie','David',
+        'Eve','Fred','Ginny','Harriet',
+        'Ilena','Joseph','Kincaid','Larry']
+
     plant_list = {
-            'R':'Radishes',
-            'G':'Grass',
-            'C':'Clover',
-            'V':'Violets'}
+        'R':'Radishes',
+        'G':'Grass',
+        'C':'Clover',
+        'V':'Violets'}
 
     def get_groups(self, diagram):
         rows = diagram.split('\n')
