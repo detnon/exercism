@@ -27,10 +27,6 @@ class Garden:
 
     def plants(self, student):
         student_plant_map = dict(zip( self.students, self.get_groups(self.diagram)))
-        pprint(student)
-        pprint(student_plant_map)
-        pprint(student_plant_map.get(student))
-
         return [v for i in student_plant_map.get(student)
                   for k,v in self.plant_list.items()
                   if i == k ]
